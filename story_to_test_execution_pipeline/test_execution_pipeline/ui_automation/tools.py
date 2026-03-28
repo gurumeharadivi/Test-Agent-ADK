@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from google.adk.tools.mcp_tool import McpToolset, StdioConnectionParams
 from mcp import StdioServerParameters
 load_dotenv()
-print("Connecting to Playwright MCP Server for ui_automation agent")
+print("Connecting to Playwright MCP Server for automation agent")
 
 playwright_tool_set = McpToolset(
     connection_params=StdioConnectionParams(

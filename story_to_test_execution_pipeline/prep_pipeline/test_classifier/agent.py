@@ -13,7 +13,7 @@ test_classifier = Agent(
     - 'UI': If the test requires browser interaction (Playwright/Selenium).
     - 'API': If the test can be verified via REST endpoints.
     Return the list of test cases with a new 'type' field added to each.
-    End your Conversation with Hands off to Execution Hub
+    End your Conversation with Hands off to ui_automation
     """,
-    output_key="classified_tasks"
+    output_key="tests_classified"
 )

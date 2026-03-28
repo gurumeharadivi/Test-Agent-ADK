@@ -1,28 +1,35 @@
+from dotenv import load_dotenv
 from google.adk.agents import LlmAgent
-import os
 from google.adk.models.google_llm import Gemini
-from prep_pipeline.agent import prep_pipeline
-from ui_automation.agent import ui_automation
-from reporter.agent import reporter
+from google.genai.types import HttpRetryOptions
+from story_to_test_execution_pipeline.agent import story_to_test_execution_pipeline
+load_dotenv()
 print("Orchestrator Agent")
 
-# Initialize the model via Vertex AI
-llm_model = Gemini(
-    model_name="gemini-2.5-flash"
-    # ADK uses your project ID from the environment
+#story_to_execution_agent_tool = AgentTool(agent = story_to_test_execution_pipeline)
+# Define the structured options
+retry_config = HttpRetryOptions(
+    attempts=5,
+    initial_delay=2.0,
+    max_delay=60.0,
+    # Note: Check if your version uses 'multiplier' or 'backoff_factor'
+    # If 'multiplier' failed before, stick to these three core keys.
 )
-test_orchestrator = LlmAgent(
+llm_model = Gemini(
+        model="gemini-2.5-flash",
+        retry_options=retry_config # Pass the object, not a dict
+)
+
+root_agent = LlmAgent(
     #model=os.getenv("MODEL"),
     model=llm_model,
     name='test_orchestrator',
     description='You are Lead QA Manager, Monitor the process and retry if necessary',
     instruction="""
     You are the Lead QA Manager.
-    1. Use prep_pipeline, ui_automation, reporter effectively to complete the tasks.
-    2. Monitor shared session state for completion.
-    3. If a tool fails in the ui_automation, attempt one retry.
-    4. Ensure final_report contains a 1:1 match of stories to results.
+    Understand the user prompt and them trigger the respective pipeline
+    story_to_execution_agent_tool - This tool is used to fetch user stories from JIRA, create test cases, execute them and prepare report
+    Once the task is complete, Show the Summary Results
     """,
-    sub_agents=[prep_pipeline,ui_automation,reporter]
+    sub_agents = [story_to_test_execution_pipeline]
 )
-root_agent = test_orchestrator
