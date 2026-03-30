@@ -10,7 +10,7 @@ Agent works as follows
    
 **Pre-Requisite**:
 
-1. Added you in my jira project account as admin, you might have received in your provided personal emails, please check and ac
+1. Added you in my jira project account as admin, you might have received in your provided personal emails, please check
 
 **How to Setup**:
 
