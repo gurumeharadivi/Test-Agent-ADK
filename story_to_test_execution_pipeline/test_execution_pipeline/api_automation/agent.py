@@ -1,10 +1,11 @@
 from google.adk.agents.llm_agent import Agent
-
+from model_config import llm_model
 from story_to_test_execution_pipeline.test_execution_pipeline.api_automation.tools import api_tool_set
 
 print("api_automation Agent is starting")
 
 api_automation = Agent(
+    model=llm_model,
     name='api_automation',
     description='You are a senior automation engineer, execute API test cases using HTTP tools provided',
     instruction="""

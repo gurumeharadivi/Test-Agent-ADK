@@ -1,10 +1,10 @@
 from google.adk.agents.llm_agent import Agent
-import os
+from model_config import llm_model
 
-print("Test Desginer Agent is starting")
+print("Test Designer Agent is starting")
 
 test_designer = Agent(
-    #model=os.getenv("MODEL"),
+    model=llm_model,
     name='test_designer',
     description='you are a senior qe engineer who designs test cases after reading user stories',
     instruction="""

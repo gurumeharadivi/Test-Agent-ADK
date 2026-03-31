@@ -1,10 +1,10 @@
 from google.adk.agents.llm_agent import Agent
-import os
+from model_config import llm_model
 
 print("Test Classifier Agent is starting")
 
 test_classifier = Agent(
-    #model=os.getenv("MODEL"),
+    model=llm_model,
     name='test_classifier',
     description='you are a senior qe engineer who classifies test cases after reading test cases',
     instruction="""

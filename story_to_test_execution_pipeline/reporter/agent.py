@@ -1,8 +1,10 @@
 from google.adk.agents.llm_agent import Agent
+from model_config import llm_model
 
 print("Reporter Agent is starting")
 
 reporter = Agent(
+    model=llm_model,
     name='reporter',
     description='You are a QA Lead, who tracks the execution of test cases either ui or api and creates a report',
     instruction="""

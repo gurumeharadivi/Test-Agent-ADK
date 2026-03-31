@@ -1,10 +1,11 @@
 from google.adk.agents.llm_agent import Agent
-
+from model_config import llm_model
 from story_to_test_execution_pipeline.test_execution_pipeline.ui_automation.tools import playwright_tool_set
 
 print("ui_automation Agent is starting")
 
 ui_automation = Agent(
+    model=llm_model,
     name='ui_automation',
     description='You are an senior automation engineer, create ui automation scripts and execute using tools provided',
     instruction="""
