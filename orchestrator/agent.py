@@ -1,11 +1,17 @@
+import os
+
 from dotenv import load_dotenv
 from google.adk.agents import LlmAgent
 from google.adk.models.google_llm import Gemini
 from google.genai.types import HttpRetryOptions
+
 from story_to_test_execution_pipeline.agent import story_to_test_execution_pipeline
 load_dotenv()
 print("Orchestrator Agent")
 
+
+# Verify it loaded (remove after testing)
+print("OPENAI KEY LOADED:", os.getenv("OPENAI_API_KEY") is not None)
 #story_to_execution_agent_tool = AgentTool(agent = story_to_test_execution_pipeline)
 # Define the structured options
 retry_config = HttpRetryOptions(
@@ -16,7 +22,7 @@ retry_config = HttpRetryOptions(
     # If 'multiplier' failed before, stick to these three core keys.
 )
 llm_model = Gemini(
-        model="gemini-2.5-flash",
+        model=os.getenv("GEMINI_MODEL"),
         retry_options=retry_config # Pass the object, not a dict
 )
 
