@@ -18,7 +18,7 @@ jira_tool_set = McpToolset(
         }
 
         ),
-        timeout=300
+        timeout=600
     )
 )
 print("got the jira tools from MCP")
