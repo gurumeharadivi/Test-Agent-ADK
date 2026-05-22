@@ -8,8 +8,8 @@ test_execution_agent will execute testcases and report summary in json format in
 Pre-Requisite:
 
 Added you in my jira project account as admin, you might have received in your provided personal emails, please check
+**
 How to Setup:
-
 install python version 3.11.9
 install pycharm community version
 clone the repo
