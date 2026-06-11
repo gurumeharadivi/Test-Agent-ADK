@@ -28,6 +28,10 @@ inroder to use playwright mcp, we need to install node.js using installer in you
 
 inorder to use gcloud we need to install gcloud cli in local laptop
 
+inorder to use litellm we need to install pip install litellm
+
+enable apis in google cloud if you are a new user
+
 As this is still a draft project, there is still no main.py created, so please run "adk web" or "adk run orchestrator" to see how agent works
 
 How to configure .env:
