@@ -26,6 +26,8 @@ inorder to use jira mcpserver, install uv using "pip install uv" in your .venv
 
 inroder to use playwright mcp, we need to install node.js using installer in your machine
 
+inorder to use gcloud we need to install gcloud cli in local laptop
+
 As this is still a draft project, there is still no main.py created, so please run "adk web" or "adk run orchestrator" to see how agent works
 
 How to configure .env:
