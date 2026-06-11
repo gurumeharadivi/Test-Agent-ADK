@@ -30,7 +30,7 @@ inorder to use gcloud we need to install gcloud cli in local laptop
 
 inorder to use litellm we need to install pip install litellm
 
-create folder at rool level called "reports" and update in tools.py of execution_orchestrator_agent folder
+create folder at rool level called "reports" and update its path in tools.py of execution_orchestrator_agent folder
 <img width="511" height="341" alt="image" src="https://github.com/user-attachments/assets/9917c909-b0d2-4d57-a322-0fcdfecbb2bd" />
 
 
