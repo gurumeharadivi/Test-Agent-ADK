@@ -20,7 +20,7 @@ activate virtual environment as per your terminal
 image
 once activate your terminal will look like .venv will appear the prefix of the terminal
 image
-Now, install google adk using "pip install google-adk" in your .venv
+Now, install google adk using "pip install google-adk=1.27.3" in your .venv
 
 inorder to use jira mcpserver, install uv using "pip install uv" in your .venv
 
