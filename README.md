@@ -53,9 +53,13 @@ JIRA_URL=https://gurumeharadivi.atlassian.net/
 JIRA_USERNAME="your email id in above url"
 
 JIRA_API_TOKEN="your jira api token of above url"
+
 OPENAI_API_KEY=""your open ai api token"
+
 USER="Your Name"
+
 GEMINI_MODEL=gemini-3.5-flash
+
 OPENAI_MODEL=openai/gpt-5
 
 steps 2, 3, 4 are not present if you want to use GOOGLE API backend instead of VERTEX API
