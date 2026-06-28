@@ -30,6 +30,10 @@ inorder to use gcloud we need to install gcloud cli in local laptop
 
 inorder to use litellm we need to install pip install litellm
 
+create folder at rool level called "reports" and update its path in tools.py of execution_orchestrator_agent folder
+<img width="511" height="341" alt="image" src="https://github.com/user-attachments/assets/9917c909-b0d2-4d57-a322-0fcdfecbb2bd" />
+
+
 enable apis in google cloud if you are a new user
 
 As this is still a draft project, there is still no main.py created, so please run "adk web" or "adk run orchestrator" to see how agent works
