@@ -34,6 +34,8 @@ test_execution_agent = Agent(
     - Every testcase in `current_testcases` must appear exactly once in `results`.
     - For FAIL fill `failure_step` and `failure_reason` precisely.
     - Keep values machine-parsable (short strings, no paragraphs).
+    - Clear cache and local storage before each test case execution.
+    
     """,
     tools=[playwright_tool_set,file_server_tool_set],
     output_key="test_execution"
